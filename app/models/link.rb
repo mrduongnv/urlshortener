@@ -10,7 +10,7 @@ class Link < ActiveRecord::Base
   end
 
   def display_slug
-    self.slug #ENV['BASE_URL'] + self.slug
+    self.slug # ENV['BASE_URL'] + self.slug
   end
 
   def screenshot_scrape
