@@ -12,8 +12,8 @@ class Link < ActiveRecord::Base
   end
 
   def screenshot_scrape
-    Screenshot.perform_async(self.id)
-    Scrape.perform_async(self.id)
+    #Screenshot.perform_async(self.id)
+    #Scrape.perform_async(self.id)
   end
 
 end
