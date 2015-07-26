@@ -3,8 +3,8 @@ class Link < ActiveRecord::Base
   after_create :generate_slug, :screenshot_scrape
 
   def generate_slug
-    o = [('a'..'z'), ('A'..'Z')].map { |i| i.to_a }.flatten
-    string = (0...8).map { o[rand(o.length)] }.join
+    o = [('a'..'z'), ('A'..'Z'), ('0'..'9')].map { |i| i.to_a }.flatten
+    string = (0...6).map { o[rand(o.length)] }.join
     self.slug = string#self.id.to_s(36)
     self.save
   end
