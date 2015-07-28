@@ -3,7 +3,7 @@ class Link < ActiveRecord::Base
   after_create :generate_slug
   #before_create :generate_slug
   
-  validates :legacy_code, format: { without: /(foo|bar)/, message: "Bad words" }
+  validates :slug, format: { without: /(foo|bar)/, message: "Bad words" }
   validates :_slug, uniqueness: true
 #  validates_with SlugValidator, :field => :_slug
 
