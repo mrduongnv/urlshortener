@@ -20,7 +20,7 @@ class Link < ActiveRecord::Base
       self._slug.gsub('i', 'I')
       self._slug.gsub('l', 'I')
       self.save
-    rescue ActiveRecord:RecordNotUnique, ActiveRecord:StatementInvalid => err
+    rescue ActiveRecord::RecordNotUnique, ActiveRecord::StatementInvalid => err
       if (count += 1) < 50
         retry
       else
