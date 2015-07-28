@@ -14,11 +14,11 @@ class Link < ActiveRecord::Base
       string = (0...6).map { o[rand(o.length)] }.join
       self.slug = string
       self._slug = self.slug
-      self._slug.gsub('0', 'O')
-      self._slug.gsub('o', 'O')
-      self._slug.gsub('1', 'I')
-      self._slug.gsub('i', 'I')
-      self._slug.gsub('l', 'I')
+      self._slug = self._slug.gsub('0', 'O')
+      self._slug = self._slug.gsub('o', 'O')
+      self._slug = self._slug.gsub('1', 'I')
+      self._slug = self._slug.gsub('i', 'I')
+      self._slug = self._slug.gsub('l', 'I')
       self.save
     rescue ActiveRecord::RecordNotUnique, ActiveRecord::StatementInvalid => err
       if (count += 1) < 50
