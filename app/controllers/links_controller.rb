@@ -9,7 +9,7 @@ class LinksController < ApplicationController
       _slug.gsub('1', 'I')
       _slug.gsub('i', 'I')
       _slug.gsub('l', 'I')
-      @link = Link.find_by(_slug: _slug])
+      @link = Link.find_by(_slug: _slug)
       if redirect_to @link.given_url
         @link.clicks += 1
         @link.save
