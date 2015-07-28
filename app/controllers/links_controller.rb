@@ -4,11 +4,11 @@ class LinksController < ApplicationController
   def show
     if params[:slug]
       _slug = params[:slug]
-      _slug.gsub('0', 'O')
-      _slug.gsub('o', 'O')
-      _slug.gsub('1', 'I')
-      _slug.gsub('i', 'I')
-      _slug.gsub('l', 'I')
+      _slug = _slug.gsub('0', 'O')
+      _slug = _slug.gsub('o', 'O')
+      _slug = _slug.gsub('1', 'I')
+      _slug = _slug.gsub('i', 'I')
+      _slug = _slug.gsub('l', 'I')
       @link = Link.find_by(_slug: _slug)
       if redirect_to @link.given_url
         @link.clicks += 1
@@ -37,11 +37,11 @@ class LinksController < ApplicationController
   private
     def set_link
       _slug = params[:slug]
-      _slug.gsub('0', 'O')
-      _slug.gsub('o', 'O')
-      _slug.gsub('1', 'I')
-      _slug.gsub('i', 'I')
-      _slug.gsub('l', 'I')
+      _slug = _slug.gsub('0', 'O')
+      _slug = _slug.gsub('o', 'O')
+      _slug = _slug.gsub('1', 'I')
+      _slug = _slug.gsub('i', 'I')
+      _slug = _slug.gsub('l', 'I')
        @link = Link.find_by(_slug: _slug)
     end
 
