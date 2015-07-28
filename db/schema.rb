@@ -19,6 +19,7 @@ ActiveRecord::Schema.define(version: 20140225013646) do
   create_table "links", force: true do |t|
     t.string   "given_url"
     t.string   "slug"
+    t.string   "_slug"
     t.integer  "clicks",     default: 0
     t.datetime "created_at"
     t.datetime "updated_at"
