@@ -5,7 +5,7 @@ class Link < ActiveRecord::Base
   
   validates :legacy_code, format: { without: /(foo|bar)/, message: "Bad words" }
   validates :_slug, uniqueness: true
-  validates_with SlugValidator, :field => :_slug
+#  validates_with SlugValidator, :field => :_slug
 
   def generate_slug
     count = 0
