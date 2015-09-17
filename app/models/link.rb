@@ -19,6 +19,7 @@ class Link < ActiveRecord::Base
       self._slug = self._slug.gsub('1', 'I')
       self._slug = self._slug.gsub('i', 'I')
       self._slug = self._slug.gsub('l', 'I')
+      self._slug = self._slug.chars.sort.join
       self.save
     rescue ActiveRecord::RecordNotUnique, ActiveRecord::StatementInvalid => err
       if (count += 1) < 50

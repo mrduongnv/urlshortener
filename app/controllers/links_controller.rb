@@ -9,6 +9,7 @@ class LinksController < ApplicationController
       _slug = _slug.gsub('1', 'I')
       _slug = _slug.gsub('i', 'I')
       _slug = _slug.gsub('l', 'I')
+      _slug = _slug.chars.sort.join
       @link = Link.find_by(_slug: _slug)
       if redirect_to @link.given_url
         @link.clicks += 1
@@ -42,6 +43,7 @@ class LinksController < ApplicationController
       _slug = _slug.gsub('1', 'I')
       _slug = _slug.gsub('i', 'I')
       _slug = _slug.gsub('l', 'I')
+      _slug = _slug.chars.sort.join
        @link = Link.find_by(_slug: _slug)
     end
 
